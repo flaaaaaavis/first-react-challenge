@@ -1,26 +1,22 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import Task from './Task'
 
-const List = function list (props) {
-  const [tasks, setTasks] = useState([])
-  return <div className={props.className}>
-    {
-      tasks.map(
-        (task) => <Task
-          title={task.title}
-          status={task.status}
-          dueDate={task.dueDate}
-          description={task.description}
-        />
-      )
-    }
-  </div>
-}
+const StyledList = styled.div`
+  width: 20vw;
+	height: 50vh;
+	border-radius: 20px;
+	background: #FFFFFF;
+`
 
-List.propTypes = {
-  className: PropTypes.string.isRequired,
+const List = function (props) {
+	return <StyledList className={props.className}>
+		<h4 className='list-title'>{props.listTitle}</h4>
+		<div>
+
+		</div>
+	</StyledList>
 }
 
 export default List;
