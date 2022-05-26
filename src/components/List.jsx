@@ -17,19 +17,19 @@ function List (props) {
 			{
 				props.tasks.map(
 					(task) => {
-						if (task.status === props.status)
-							return
-								<Task
-									title={task.title}
-									status={task.status}
-									dueDate={task.dueDate}
-									tasks={props.tasks}
-									setTasks={props.setTasks}
-									setDueDate={props.setDueDate}
-									setTitle={props.setTitle}
-									setStatus={props.setStatus}
-								/>
-						// return null
+						if (task.status === props.status) {
+							return <Task
+								title={task.title}
+								status={task.status}
+								dueDate={task.dueDate}
+								tasks={props.tasks}
+								setTasks={props.setTasks}
+								setDueDate={props.setDueDate}
+								setTitle={props.setTitle}
+								setStatus={props.setStatus}
+							/>
+						}
+						return null
 					}
 				)
 			}
