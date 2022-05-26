@@ -16,7 +16,7 @@ const StyledTask = styled.div`
 	};
 `
 
-const Task = function (props) {
+function Task (props) {
   return <StyledTask>
     <h3 className='title'>{props.title}</h3>
     <h4 className='status'>{props.status}</h4>
