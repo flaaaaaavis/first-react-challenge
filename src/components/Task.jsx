@@ -25,6 +25,9 @@ function Task (props) {
         let newTask = props.tasks;
         newTask.splice(props.index, 1);
         props.setTasks(newTask);
+
+		props.cleanInput();
+		console.log(props.tasks);
     }
     function edit () {
         props.setTitle(props.title)
