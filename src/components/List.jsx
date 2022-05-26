@@ -4,10 +4,19 @@ import styled from 'styled-components'
 import Task from './Task'
 
 const StyledList = styled.div`
-  width: 20vw;
+  	width: 20vw;
 	height: 50vh;
 	border-radius: 20px;
 	background: #FFFFFF;
+	.list-title {
+		width: 100%;
+		height: 5vh;
+		border-radius: 20px 20px 0 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #0ACD86;
+	}
 `
 
 function List (props) {
@@ -16,9 +25,10 @@ function List (props) {
 		<div>
 			{
 				props.tasks.map(
-					(task) => {
+					(task, index) => {
 						if (task.status === props.status) {
 							return <Task
+								key={index}
 								title={task.title}
 								status={task.status}
 								dueDate={task.dueDate}

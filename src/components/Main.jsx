@@ -1,13 +1,37 @@
 import React, {useState} from 'react'
+import styled from 'styled-components'
 
 import Form from './Form'
 import List from './List'
-import Task from './Task'
+
+const StyledMain = styled.main`
+	width: 100vw;
+	min-height: 92vh;
+	background: #E7E7E7;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	button, a, img, input {
+		cursor: pointer;
+	}
+	input, select {
+		padding: 0 10px;
+	}
+	#container-content {
+		width: 85vw;
+		min-height: 30vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+	}
+`
 
 function Main (props) {
 	const [title, setTitle] = useState('')
 	const [dueDate, setDueDate] = useState('')
-  	const [status, setStatus] = useState('')
+  	const [status, setStatus] = useState('toDo')
 
 	const [tasks, setTasks] = useState([
 		{
@@ -23,11 +47,6 @@ function Main (props) {
 		{
 			title: "Task 03",
 			dueDate: "2022-05-11",
-			status: "toDo"
-		},
-		{
-			title: "Task 04",
-			dueDate: "2022-05-28",
 			status: "done"
 		}
 	])
@@ -35,24 +54,19 @@ function Main (props) {
   	function clearInput () {
 		setTitle('')
 		setDueDate('')
-    	setStatus('')
+    	setStatus('toDo')
 	}
-	function handleData (event) {
+	function handleData () {
 		const newTask = {
 			"title": title,
 			"dueDate": dueDate,
       		"status": status
 		}
-		if(newTask.status == 'toDo') {
-			console.log('toDo')
-		} else if(newTask.status == 'doing') {
-			console.log('doing')
-		} else {
-			console.log('done')
-		}
 		const allTasks = tasks
 		allTasks.push(newTask)
 		setTasks(allTasks)
+
+		console.log(tasks)
 
 		clearInput()
 	}
@@ -64,7 +78,7 @@ function Main (props) {
 		console.log('deletar')
 	}
 
-	return <main>
+	return <StyledMain>
 		<h2>Cadastrar uma Tarefa</h2>
 		<Form
 			title={title}
@@ -109,7 +123,7 @@ function Main (props) {
 				setStatus={setStatus}
 			/>
 		</div>
-	</main>
+	</StyledMain>
 }
 
 export default Main
