@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import binSymbol from '../media/delete_FILL0_wght400_GRAD0_opsz48.svg'
-import editSymbol from '../media/edit_note_FILL0_wght400_GRAD0_opsz48.svg'
+import binSymbol from './assets/delete_FILL0_wght400_GRAD0_opsz48.svg'
+import editSymbol from './assets/edit_note_FILL0_wght400_GRAD0_opsz48.svg'
 
 const StyledTask = styled.div`
 	width: 95%;

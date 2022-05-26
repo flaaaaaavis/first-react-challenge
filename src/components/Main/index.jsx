@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 
-import Form from './Form'
-import List from './List'
+import Form from '../Form'
+import List from '../List'
 
 const StyledMain = styled.main`
 	width: 100vw;

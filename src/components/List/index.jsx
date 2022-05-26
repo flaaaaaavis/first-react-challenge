@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import Task from './Task'
+import Task from '../Task'
 
 const StyledList = styled.div`
   	width: 20vw;
