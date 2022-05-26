@@ -51,7 +51,7 @@ function Main (props) {
 		}
 	])
 
-  	function clearInput () {
+  	function cleanInput () {
 		setTitle('')
 		setDueDate('')
     	setStatus('toDo')
@@ -67,15 +67,7 @@ function Main (props) {
 		setTasks(allTasks)
 
 		console.log(tasks)
-
-		clearInput()
-	}
-	function edit() {
-		console.log('editar')
-	}
-
-	function discard() {
-		console.log('deletar')
+		cleanInput()
 	}
 
 	return <StyledMain>
@@ -88,7 +80,7 @@ function Main (props) {
 			status={status}
 			setStatus={setStatus}
 			handleData={handleData}
-			clearInput={clearInput}
+			cleanInput={cleanInput}
 		/>
 		<h2>Quadro de Tarefas</h2>
 		<div id="container-content">
@@ -101,6 +93,8 @@ function Main (props) {
                 setDueDate={setDueDate}
 				setTitle={setTitle}
 				setStatus={setStatus}
+				handleData={handleData}
+				cleanInput={cleanInput}
 			/>
 			<List
 				className='doing'
@@ -111,6 +105,8 @@ function Main (props) {
                 setDueDate={setDueDate}
 				setTitle={setTitle}
 				setStatus={setStatus}
+				handleData={handleData}
+				cleanInput={cleanInput}
 			/>
 			<List
 				className='done'
@@ -121,6 +117,8 @@ function Main (props) {
                 setDueDate={setDueDate}
 				setTitle={setTitle}
 				setStatus={setStatus}
+				handleData={handleData}
+				cleanInput={cleanInput}
 			/>
 		</div>
 	</StyledMain>

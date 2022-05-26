@@ -29,6 +29,7 @@ function List (props) {
 						if (task.status === props.status) {
 							return <Task
 								key={index}
+								index={index}
 								title={task.title}
 								status={task.status}
 								dueDate={task.dueDate}
@@ -37,6 +38,8 @@ function List (props) {
 								setDueDate={props.setDueDate}
 								setTitle={props.setTitle}
 								setStatus={props.setStatus}
+								handleData={props.handleData}
+								cleanInput={props.cleanInput}
 							/>
 						}
 						return null

@@ -21,14 +21,26 @@ const StyledTask = styled.div`
 `
 
 function Task (props) {
-  return <StyledTask>
-    <h4 className='title'>{props.title}</h4>
-    <h5 className='due-date'>{props.dueDate}</h5>
-    <div>
-      <img src={binSymbol} alt="" onClick={props.discard} />
-      <img src={editSymbol} alt="" onClick={props.edit} />
-    </div>
-  </StyledTask>
+	function discard () {
+        let newTask = props.tasks;
+        newTask.splice(props.index, 1);
+        props.setTasks(newTask);
+    }
+    function edit () {
+        props.setTitle(props.title)
+        props.setDueDate(props.dueDate)
+        props.setStatus(props.status)
+
+        discard();
+    }
+	return <StyledTask>
+		<h4 className='title'>{props.title}</h4>
+		<h5 className='due-date'>{props.dueDate}</h5>
+		<div>
+			<img src={binSymbol} alt="" onClick={discard} />
+			<img src={editSymbol} alt="" onClick={edit} />
+		</div>
+	</StyledTask>
 }
 
 export default Task
